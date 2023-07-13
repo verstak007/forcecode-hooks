@@ -1,0 +1,74 @@
+{
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb-typescript-prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "linebreak-style": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 140,
+        "ignoreUrls": true
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
+  }
+}
