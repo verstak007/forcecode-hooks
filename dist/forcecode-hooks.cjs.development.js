@@ -1,13 +1,17 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var react = require('react');
 
 var useMediaQuery = function useMediaQuery(minWidth) {
-  var _useState = useState(false),
+  var _useState = react.useState(false),
     targetReached = _useState[0],
     setTargetReached = _useState[1];
-  var updateTarget = useCallback(function (event) {
+  var updateTarget = react.useCallback(function (event) {
     setTargetReached(event.matches);
   }, []);
-  useEffect(function () {
+  react.useEffect(function () {
     var media = window.matchMedia("(min-width: " + minWidth + "px)");
     media.addEventListener('change', updateTarget);
     if (media.matches) {
@@ -21,12 +25,13 @@ var useMediaQuery = function useMediaQuery(minWidth) {
 };
 
 var usePrevious = function usePrevious(value) {
-  var ref = useRef();
-  useEffect(function () {
+  var ref = react.useRef();
+  react.useEffect(function () {
     ref.current = value;
   });
   return ref.current;
 };
 
-export { useMediaQuery, usePrevious };
-//# sourceMappingURL=mylib.esm.js.map
+exports.useMediaQuery = useMediaQuery;
+exports.usePrevious = usePrevious;
+//# sourceMappingURL=forcecode-hooks.cjs.development.js.map
